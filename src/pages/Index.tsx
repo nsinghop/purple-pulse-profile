@@ -4,26 +4,33 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
+import CertificatesSection from '@/components/CertificatesSection';
+import EducationSection from '@/components/EducationSection';
 import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
   useEffect(() => {
     // Add smooth scrolling behavior for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = (this as HTMLAnchorElement).getAttribute('href');
-        if (targetId) {
-          document.querySelector(targetId)?.scrollIntoView({
+    const handleAnchorClick = (e: Event) => {
+      e.preventDefault();
+      const targetId = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
             behavior: 'smooth'
           });
         }
-      });
+      }
+    };
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', handleAnchorClick);
     });
     
     return () => {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', () => {});
+        anchor.removeEventListener('click', handleAnchorClick);
       });
     };
   }, []);
@@ -34,6 +41,8 @@ const Index = () => {
       <HeroSection />
       <SkillsSection />
       <ProjectsSection />
+      <CertificatesSection />
+      <EducationSection />
       <ContactSection />
       
       {/* Footer */}
