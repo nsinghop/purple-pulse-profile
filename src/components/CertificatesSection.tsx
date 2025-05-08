@@ -86,7 +86,7 @@ const CertificatesSection = () => {
                     alt={cert.title} 
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                 </div>
                 <CardContent className="p-5">
                   <h3 className="text-lg font-semibold mb-1">{cert.title}</h3>
@@ -98,10 +98,10 @@ const CertificatesSection = () => {
                       href={cert.link} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="text-neon-purple text-sm hover:underline inline-flex items-center"
+                      className="text-neon-purple text-sm hover:underline inline-flex items-center group"
                     >
                       View Certificate 
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                       </svg>
                     </a>

@@ -45,8 +45,8 @@ const Index = () => {
       <EducationSection />
       <ContactSection />
       
-      {/* Footer */}
-      <footer className="py-8 text-center text-gray-400 border-t border-white/10">
+      {/* Footer with darker purple gradient */}
+      <footer className="py-8 text-center text-gray-400 border-t border-white/10 bg-gradient-to-b from-neon-darker to-neon-dark">
         <div className="container mx-auto px-4">
           <p>&copy; {new Date().getFullYear()} DevPort. All rights reserved.</p>
         </div>

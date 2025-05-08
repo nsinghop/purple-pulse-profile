@@ -63,13 +63,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-        // Custom colors for our portfolio
+        // Updated custom colors for our portfolio with darker purples
         neon: {
-          purple: '#9b87f5',
-          purple2: '#7E69AB',
-          purple3: '#6E59A5',
-          dark: '#121212',
-          darker: '#0f0f13',
+          purple: '#8a67f7',     // Made slightly darker
+          purple2: '#6e51a8',    // Made darker
+          purple3: '#523e88',    // Made darker
+          dark: '#0d0b12',       // Made darker
+          darker: '#08070c',     // Made darker
         }
 			},
 			borderRadius: {
@@ -93,11 +93,11 @@ export default {
         'pulse-glow': {
           '0%, 100%': { 
             opacity: '1',
-            boxShadow: '0 0 15px rgba(155, 135, 245, 0.6)' 
+            boxShadow: '0 0 15px rgba(138, 103, 247, 0.6)' // Updated to match new purple
           },
           '50%': { 
             opacity: '0.8',
-            boxShadow: '0 0 30px rgba(155, 135, 245, 0.9)' 
+            boxShadow: '0 0 30px rgba(138, 103, 247, 0.9)' // Updated to match new purple
           },
         },
         'gradient-shift': {

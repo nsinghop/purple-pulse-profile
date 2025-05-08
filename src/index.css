@@ -17,7 +17,7 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 252 81% 75%;
+    --primary: 255 84% 68%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 240 3.7% 15.9%;
@@ -26,7 +26,7 @@
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
 
-    --accent: 252 81% 75%;
+    --accent: 255 84% 68%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -58,7 +58,7 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 252 81% 75%;
+    --primary: 255 84% 68%;
     --primary-foreground: 240 5.9% 10%;
 
     --secondary: 240 3.7% 15.9%;
@@ -96,7 +96,7 @@
   body {
     @apply bg-neon-darker text-foreground font-space-grotesk;
     font-feature-settings: "rlig" 1, "calt" 1;
-    scrollbar-color: rgba(155, 135, 245, 0.5) rgba(15, 15, 19, 0.1);
+    scrollbar-color: rgba(138, 103, 247, 0.5) rgba(8, 7, 12, 0.1);
     scrollbar-width: thin;
   }
 
@@ -105,11 +105,11 @@
   }
   
   ::-webkit-scrollbar-track {
-    background-color: rgba(15, 15, 19, 0.1);
+    background-color: rgba(8, 7, 12, 0.1);
   }
   
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #9b87f5, #6E59A5);
+    background: linear-gradient(to bottom, #8a67f7, #523e88);
     border-radius: 3px;
   }
 
@@ -127,16 +127,16 @@
   }
   
   .glow {
-    text-shadow: 0 0 10px rgba(155, 135, 245, 0.7);
+    text-shadow: 0 0 10px rgba(138, 103, 247, 0.7);
   }
 
   .glow-box {
-    box-shadow: 0 0 15px rgba(155, 135, 245, 0.5);
+    box-shadow: 0 0 15px rgba(138, 103, 247, 0.5);
   }
   
   .grid-pattern {
-    background-image: linear-gradient(rgba(155, 135, 245, 0.1) 1px, transparent 1px),
-                     linear-gradient(90deg, rgba(155, 135, 245, 0.1) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(138, 103, 247, 0.1) 1px, transparent 1px),
+                     linear-gradient(90deg, rgba(138, 103, 247, 0.1) 1px, transparent 1px);
     background-size: 20px 20px;
   }
 
@@ -157,7 +157,7 @@
   }
   
   .hover-glow:hover {
-    filter: drop-shadow(0 0 8px rgba(155, 135, 245, 0.7));
+    filter: drop-shadow(0 0 8px rgba(138, 103, 247, 0.7));
   }
 
   .hover-rotate {
@@ -169,7 +169,7 @@
   }
   
   .purple-gradient-bg {
-    @apply bg-gradient-to-br from-neon-darker via-[#1a1625] to-neon-darker;
+    @apply bg-gradient-to-br from-neon-darker via-[#15121d] to-neon-darker;
   }
   
   /* Neon Border Effect */
@@ -181,7 +181,7 @@
     content: '';
     @apply absolute inset-0 rounded-xl;
     padding: 2px;
-    background: linear-gradient(45deg, #9b87f5, #7E69AB, #6E59A5, #9b87f5);
+    background: linear-gradient(45deg, #8a67f7, #6e51a8, #523e88, #8a67f7);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;

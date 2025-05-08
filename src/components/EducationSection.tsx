@@ -44,8 +44,8 @@ const educationData: Education[] = [
 ];
 
 const EducationSection = () => {
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: false, amount: 0.2 });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.2 });
 
   return (
     <section id="education" className="py-20 relative">
@@ -61,7 +61,7 @@ const EducationSection = () => {
         </div>
         
         <div 
-          ref={containerRef}
+          ref={ref}
           className="relative max-w-4xl mx-auto mt-16"
         >
           {/* Timeline line */}
@@ -73,19 +73,20 @@ const EducationSection = () => {
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className={`relative mb-16 md:mb-24 ${index % 2 === 0 ? 'md:pl-12 md:pr-0' : 'md:pr-12 md:pl-0'} ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} pl-12`}
+              className={`relative mb-16 md:mb-24 md:w-1/2 ${index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'} pl-12 md:pl-0`}
             >
               {/* Timeline dot */}
-              <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 -translate-y-1/3 w-6 h-6 rounded-full bg-gradient-to-r from-neon-purple to-neon-purple3 glow-box z-10"></div>
+              <div className="absolute left-0 md:left-1/2 top-0 transform -translate-y-1/3 md:-translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-neon-purple to-neon-purple3 glow-box z-10"></div>
               
               {/* Year bubble */}
-              <div className={`absolute left-0 top-0 md:left-auto md:top-0 ${index % 2 === 0 ? 'md:right-full md:mr-10' : 'md:left-full md:ml-10'} md:transform md:translate-y-0 transform -translate-x-full -translate-y-1/4`}>
+              <div className={`absolute left-0 top-0 md:top-0 ${index % 2 === 0 ? 'md:left-auto md:right-full md:mr-10' : 'md:left-full md:ml-10'} transform -translate-x-full -translate-y-1/4 md:transform-none whitespace-nowrap`}>
                 <span className="block bg-neon-purple/20 backdrop-blur-sm px-4 py-1 rounded-full border border-neon-purple/40 text-sm font-medium">
                   {education.period}
                 </span>
               </div>
               
-              <div className={`glass-panel md:w-[calc(100%-24px)] ${index % 2 === 0 ? 'md:ml-auto' : ''}`}>
+              {/* Content Card */}
+              <div className={`glass-panel ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}>
                 <div className="flex flex-col md:flex-row md:items-center gap-4 p-6">
                   {/* Logo */}
                   <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 mx-auto md:mx-0">
@@ -97,7 +98,7 @@ const EducationSection = () => {
                   </div>
                   
                   {/* Content */}
-                  <div className={`flex-grow text-left`}>
+                  <div className="flex-grow text-left">
                     <h3 className="text-xl font-bold text-white mb-1">{education.degree}</h3>
                     <p className="text-neon-purple font-medium mb-2">{education.institution}</p>
                     <p className="text-gray-400 text-sm mb-3">{education.location}</p>
